@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="auth1" class="com.raj.sbeans.Author">
+		<property name="authorId" value="1111"></property>
+		<property name="authorName" value="James Gosling (USA)"></property>
+		<property name="country" value="USA"></property>
+	</bean>
+
+	<bean id="auth2" class="com.raj.sbeans.Author">
+		<property name="authorId" value="2222"></property>
+		<property name="authorName" value="Robert Lafore (UK"></property>
+		<property name="country" value="UK"></property>
+	</bean>
+
+	<bean id="auth3" class="com.raj.sbeans.Author">
+		<property name="authorId" value="3333"></property>
+		<property name="authorName" value="Craig Walls (USA)"></property>
+		<property name="country" value="USA"></property>
+	</bean>
+
+	<bean id="auth4" class="com.raj.sbeans.Author">
+		<property name="authorId" value="4444"></property>
+		<property name="authorName" value="Sam Newman (UK)"></property>
+		<property name="country" value="UK"></property>
+	</bean>
+
+	<bean id="book1" class="com.raj.sbeans.Book">
+		<property name="bookId" value="10001"></property>
+		<property name="bookTitle" value="Java in Action"></property>
+		<property name="author" ref="auth1"></property>
+	</bean>
+
+	<bean id="book2" class="com.raj.sbeans.Book">
+		<property name="bookId" value="10002"></property>
+		<property name="bookTitle" value="Data Structures"></property>
+		<property name="author" ref="auth2"></property>
+	</bean>
+
+	<bean id="book3" class="com.raj.sbeans.Book">
+		<property name="bookId" value="10003"></property>
+		<property name="bookTitle" value="Spring Boot Mastery"></property>
+		<property name="author" ref="auth3"></property>
+	</bean>
+
+	<bean id="book4" class="com.raj.sbeans.Book">
+		<property name="bookId" value="10004"></property>
+		<property name="bookTitle" value="Microservices Explained"></property>
+		<property name="author" ref="auth4"></property>
+	</bean>
+
+	<bean id="lib1" class="com.raj.sbeans.Library">
+		<property name="libraryName" value="Central Library"></property>
+		<property name="books">
+			<list>
+				<ref bean="book1" />
+				<ref bean="book2" />
+			</list>
+		</property>
+
+	</bean>
+
+	<bean id="lib2" class="com.raj.sbeans.Library">
+		<property name="libraryName" value="Central Library"></property>
+		<property name="books">
+			<list>
+				<ref bean="book3" />
+				<ref bean="book4" />
+			</list>
+		</property>
+
+	</bean>
+
+	<bean id="city" class="com.raj.sbeans.City">
+		<property name="cityName" value="Hyderabad"></property>
+		<property name="libraries">
+			<list>
+				<ref bean="lib1" />
+				<ref bean="lib2" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

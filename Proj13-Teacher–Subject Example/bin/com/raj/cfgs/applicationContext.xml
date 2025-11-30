@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id="sub" class="com.raj.sbeans.Subject">
+           <property name="teacher" ref="teach"></property>
+       </bean>
+       
+       <bean id="teach" class="com.raj.sbeans.Teacher">
+          <property name="subject" ref="sub"></property>
+       </bean>
+</beans>

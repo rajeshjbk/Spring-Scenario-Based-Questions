@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp1" class="com.raj.sbeans.Employee">
+		<constructor-arg value="101"></constructor-arg>
+		<constructor-arg value="John"></constructor-arg>
+		<constructor-arg value="Developer"></constructor-arg>
+	</bean>
+
+
+	<bean id="emp2" class="com.raj.sbeans.Employee">
+		<constructor-arg value="102"></constructor-arg>
+		<constructor-arg value="Anjali"></constructor-arg>
+		<constructor-arg value="Analyst"></constructor-arg>
+	</bean>
+
+
+	<bean id="emp3" class="com.raj.sbeans.Employee">
+		<constructor-arg value="103"></constructor-arg>
+		<constructor-arg value="Rahul"></constructor-arg>
+		<constructor-arg value="DevOps"></constructor-arg>
+	</bean>
+
+
+	<bean id="emp4" class="com.raj.sbeans.Employee">
+		<constructor-arg value="104"></constructor-arg>
+		<constructor-arg value="Sara"></constructor-arg>
+		<constructor-arg value="Tester"></constructor-arg>
+	</bean>
+
+
+	<bean id="proj1" class="com.raj.sbeans.Project">
+		<constructor-arg value="01"></constructor-arg>
+		<constructor-arg value="E-Commerce Portal"></constructor-arg>
+		<constructor-arg value="6"></constructor-arg>
+	</bean>
+
+
+	<bean id="proj2" class="com.raj.sbeans.Project">
+		<constructor-arg value="02"></constructor-arg>
+		<constructor-arg value="Inventory System"></constructor-arg>
+		<constructor-arg value="12"></constructor-arg>
+	</bean>
+
+
+	<bean id="proj3" class="com.raj.sbeans.Project">
+		<constructor-arg value="03"></constructor-arg>
+		<constructor-arg value="Banking App"></constructor-arg>
+		<constructor-arg value="8"></constructor-arg>
+	</bean>
+
+
+	<bean id="proj4" class="com.raj.sbeans.Project">
+		<constructor-arg value="04"></constructor-arg>
+		<constructor-arg value="Cloud Deployment"></constructor-arg>
+		<constructor-arg value="6"></constructor-arg>
+	</bean>
+
+	<bean id="manager1" class="com.raj.sbeans.Manager">
+		<constructor-arg value="David"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="emp1" value-ref="proj1"></entry>
+				<entry key-ref="emp2" value-ref="proj4"></entry>
+			</map>
+		</constructor-arg>
+
+	</bean>
+
+
+	<bean id="manager2" class="com.raj.sbeans.Manager">
+		<constructor-arg value="Rohit"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="emp3" value-ref="proj2"></entry>
+				<entry key-ref="emp4" value-ref="proj3"></entry>
+			</map>
+		</constructor-arg>
+
+	</bean>
+
+	<bean id="department" class="com.raj.sbeans.Department">
+		<constructor-arg value="IT Department"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="manager1" />
+				<ref bean="manager2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

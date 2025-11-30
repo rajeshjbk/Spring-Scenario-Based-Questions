@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="prod" class="com.raj.sbeans.Product">
+       <constructor-arg name="productId" value="501"/>
+       <constructor-arg name="productName" value="Wireless Earbuds"/>
+       <constructor-arg name="price" value="2500"/>
+    </bean>   
+    
+    <bean id="cust" class="com.raj.sbeans.Customer">
+       <constructor-arg name="customerId" value="101"/>
+       <constructor-arg name="customerName" value="Rajesh Kumar"/>
+       <constructor-arg name="address" value="Mumbai"/>
+    </bean>   
+    
+    <bean id="ord" class="com.raj.sbeans.Order">
+       <constructor-arg name="orderId" value="1000002"/>
+       <constructor-arg name="customer" ref="cust"/>
+       <constructor-arg name="product" ref="prod"/>
+       <constructor-arg name="quantity" value="2"/>
+    </bean>   
+    
+    <bean id="bill" class="com.raj.sbeans.BillService">
+       <constructor-arg value="18"/>
+       <constructor-arg value="10"/>
+    </bean>
+    
+    <bean id="onlinestore" class="com.raj.sbeans.OnlineStore">
+       <constructor-arg ref="ord"/>
+       <constructor-arg ref="bill"/>
+    </bean>      
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Enable component scanning -->
+	<context:component-scan base-package="com.raj.sbeans" />
+  
+   <bean id="project1" class="com.raj.sbeans.Project">
+      <constructor-arg value="01"></constructor-arg>
+      <constructor-arg value="Web Application"></constructor-arg>
+      <constructor-arg value="6"></constructor-arg>
+   </bean>
+   
+   <bean id="project2" class="com.raj.sbeans.Project">
+      <constructor-arg value="02"></constructor-arg>
+      <constructor-arg value="Recruitment System"></constructor-arg>
+      <constructor-arg value="3"></constructor-arg>
+   </bean>
+   
+   <bean id="emp1" class="com.raj.sbeans.Employee">
+       <constructor-arg value="111"></constructor-arg>
+       <constructor-arg value="Alice"></constructor-arg>
+   </bean>
+   
+   <bean id="emp2" class="com.raj.sbeans.Employee">
+       <constructor-arg value="222"></constructor-arg>
+       <constructor-arg value="Bob"></constructor-arg>
+   </bean>
+   
+   <bean id="dept1" class="com.raj.sbeans.Department">
+      <constructor-arg value="IT"></constructor-arg>
+      <constructor-arg>
+        <list>
+           <ref bean="emp1"/>
+        </list>
+      </constructor-arg>
+   </bean>
+   
+   <bean id="dept2" class="com.raj.sbeans.Department">
+      <constructor-arg value="HR"></constructor-arg>
+      <constructor-arg>
+        <list>
+           <ref bean="emp2"/>
+        </list>
+      </constructor-arg>
+   </bean>
+   
+   <bean id="company" class="com.raj.sbeans.Company">
+       <constructor-arg value="TechWave Solutions"></constructor-arg>
+       <constructor-arg name="departments">
+         <map>
+           <entry key="IT" value-ref="dept1"></entry>
+            <entry key="HR" value-ref="dept2"></entry>
+         </map>
+       </constructor-arg>
+   </bean>
+</beans>
+    

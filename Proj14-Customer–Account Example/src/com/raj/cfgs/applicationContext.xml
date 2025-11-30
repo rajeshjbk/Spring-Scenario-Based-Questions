@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <bean id="cust" class="com.raj.sbeans.Customer">
+       <constructor-arg value="400022"></constructor-arg>
+       <constructor-arg value="Rajesh"></constructor-arg>
+       <property name="account" ref="acc"></property>
+    </bean>  
+    
+    <bean id="acc" class="com.raj.sbeans.Account">
+         <constructor-arg value="9999997861"></constructor-arg>
+         <constructor-arg value="50000"></constructor-arg>
+         <property name="customer" ref="cust"></property>
+         
+     </bean> 
+       
+</beans>

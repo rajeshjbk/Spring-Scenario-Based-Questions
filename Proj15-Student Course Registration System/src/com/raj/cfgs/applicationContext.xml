@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="course1" class="com.raj.sbeans.Course">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="Java Fundamentals (3 Months"></constructor-arg>
+	</bean>
+
+	<bean id="course2" class="com.raj.sbeans.Course">
+		<constructor-arg value="222"></constructor-arg>
+		<constructor-arg value="Spring Boot (2 Months)"></constructor-arg>
+	</bean>
+
+	<bean id="course3" class="com.raj.sbeans.Course">
+		<constructor-arg value="333"></constructor-arg>
+		<constructor-arg value="Python Basics (2 Months)"></constructor-arg>
+	</bean>
+
+	<bean id="course4" class="com.raj.sbeans.Course">
+		<constructor-arg value="444"></constructor-arg>
+		<constructor-arg value="Data Science (6 Months)"></constructor-arg>
+	</bean>
+
+	<bean id="student1" class="com.raj.sbeans.Student">
+		<constructor-arg value="101"></constructor-arg>
+		<constructor-arg value="Alice"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="course1" />
+				<ref bean="course2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="student2" class="com.raj.sbeans.Student">
+		<constructor-arg value="102"></constructor-arg>
+		<constructor-arg value="Bob"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="course3" />
+				<ref bean="course4" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="university" class="com.raj.sbeans.University">
+		<constructor-arg value="Oxford University"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="student1" />
+				<ref bean="student2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>  
