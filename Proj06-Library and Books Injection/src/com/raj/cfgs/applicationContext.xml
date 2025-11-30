@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean id="b1" class="com.raj.sbeans.Book">
+      <property name="title" value="Core Java"></property>
+      <property name="author" value="James"></property>
+  </bean>
+  
+  <bean id="b3" class="com.raj.sbeans.Book">
+      <property name="title" value="Oracle"></property>
+      <property name="author" value="Raj"></property>
+  </bean>
+  
+  <bean id="b2" class="com.raj.sbeans.Book">
+      <property name="title" value="Adv Java"></property>
+      <property name="author" value="Scott"></property>
+  </bean>
+  
+  <bean id="book" class="com.raj.sbeans.Library">
+     <property name="book1" ref="b1"></property>
+     <property name="book2" ref="b2"></property>
+     <property name="book3" ref="b3"></property>
+  </bean>
+        
+</beans>

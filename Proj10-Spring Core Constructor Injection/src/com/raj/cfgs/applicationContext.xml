@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <bean id="course" class="com.raj.sbeans.Course">
+      <constructor-arg value="444"/>
+      <constructor-arg value="Full Stack Java"/>
+   </bean>
+   
+   <bean id="stu" class="com.raj.sbeans.Student">
+     <constructor-arg value="222"/>
+     <constructor-arg value="Rajesh"/>
+     <constructor-arg ref="course"/>
+   </bean>
+   
+</beans>   
