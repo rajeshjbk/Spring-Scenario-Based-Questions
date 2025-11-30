@@ -1,0 +1,5 @@
+# Created at 2025-11-18T12:48:19.690
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Spring(By Natraj Sir)\Spring Lab\Dependency Injection\Proj64-ArithmeticOperationTesting-UnitTesting\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

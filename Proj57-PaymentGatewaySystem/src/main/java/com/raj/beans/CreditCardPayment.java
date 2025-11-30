@@ -1,0 +1,14 @@
+package com.raj.beans;
+
+import org.springframework.stereotype.Component;
+
+@Component("credit")
+public class CreditCardPayment implements IPayment {
+
+	@Override
+	public String pay(double amount) {
+		
+		return "Payment of ₹"+amount+" via CreditCard";
+	}
+
+}

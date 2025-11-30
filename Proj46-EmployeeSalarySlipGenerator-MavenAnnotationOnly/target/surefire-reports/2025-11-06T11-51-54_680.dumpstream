@@ -1,0 +1,5 @@
+# Created at 2025-11-06T11:51:54.993
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Spring(By Natraj Sir)\Spring Lab\Dependency Injection\Proj46-EmployeeSalarySlipGenerator-MavenAnnotationOnly\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
